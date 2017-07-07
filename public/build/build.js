@@ -126,7 +126,8 @@
 	//join channel and room
 
 
-	);_vue2.default.http.interceptors.push(function (request, next) {
+	);document.getElementById("csrf").style.display = 'true';
+	_vue2.default.http.interceptors.push(function (request, next) {
 	  request.headers.set('X-CSRF-TOKEN', document.getElementById("csrf").value);
 	  var jwt = localStorage.getItem('id_token');
 	  if (jwt) {
@@ -42656,7 +42657,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -42793,11 +42794,10 @@
 	      this.errors = {};
 	      this.running = true;
 	      this.$http.post('http://np.cleverapps.io/api/v1/store', this.perspective).then(function (response) {
-	        console.log(response);
 	        _this2.errors = response.data;
 	        _this2.running = false;
+	        _this2.$router.push({ path: 'perspectives' });
 	      }, function (err) {
-	        console.log(err);
 	        _this2.errors = err.data;
 	        _this2.running = false;
 	      });
