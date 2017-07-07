@@ -14,4 +14,10 @@
 | Ws.channel('/chat', 'ChatController')
 */
 
-const Ws = use('Ws')
+ const Ws = use('Ws')
+
+Ws.channel('chat', function (socket, request, presence) {
+  socket.on('message', function (message) {
+
+  })
+})

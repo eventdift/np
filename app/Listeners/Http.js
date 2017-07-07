@@ -29,8 +29,18 @@ Http.handleError = function * (error, request, response) {
   /**
    * PRODUCTION REPORTER
    */
+
   console.error(error.stack)
-  yield response.status(status).sendView('errors/index', {error})
+
+  if (request.is('html')) {
+    yield response.status(status).sendView('errors/index', {error})
+    return
+  }
+
+  if (request.is('json')) {
+    response.status(status).send(error)
+    return
+  }
 }
 
 /**
