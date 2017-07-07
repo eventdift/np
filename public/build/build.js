@@ -118,7 +118,7 @@
 
 	var wsVuePlugin = [];
 
-	var url = 'http://localhost:3000';
+	var url = 'http://np.cleverapps.io';
 	wsVuePlugin.install = function (Vue, data) {
 	  Vue.prototype.$io = data.ws(data.url);
 	};
@@ -40378,7 +40378,7 @@
 
 	var vue = __webpack_require__(2);
 	// URL and endpoint constants
-	const API_URL = 'http://localhost:3000/api/v1/'
+	const API_URL = 'http://np.cleverapps.io/api/v1/'
 	const LOGIN_URL = API_URL + 'login/'
 	const SIGNUP_URL = API_URL + 'user/'
 	const LOGOUT_URL = API_URL + 'logout/'
@@ -40793,7 +40793,7 @@
 	    _auth2.default.checkAuth();
 	    this.user = _auth2.default.user.authenticated;
 	    var _this = this;
-	    this.$http.get('http://localhost:3000/api/v1/perspectives/special/all').then(function (response) {
+	    this.$http.get('http://np.cleverapps.io/api/v1/perspectives/special/all').then(function (response) {
 	      console.log(response.data);
 	      _this.data = response.data;
 	    }, function (err) {
@@ -41552,8 +41552,8 @@
 	  data: function data() {
 	    return {
 	      term: '',
-	      url: 'http://localhost:3000/api/v1/perspectives/special/me',
-	      url_search: 'http://localhost:3000/api/v1/perspectives/special/searc',
+	      url: 'http://np.cleverapps.io/api/v1/perspectives/special/me',
+	      url_search: 'http://np.cleverapps.io/api/v1/perspectives/special/searc',
 	      chat: false,
 	      imgUrl: '',
 	      perspectiv: {
@@ -41610,7 +41610,7 @@
 	        perspective.user_voted = true;
 	        perspective.choice = choice;
 	        this.increment_vote(perspective, choice);
-	        this.$http.post('http://localhost:3000/api/v1/vote', this.perspectiv).then(function (response) {
+	        this.$http.post('http://np.cleverapps.io/api/v1/vote', this.perspectiv).then(function (response) {
 	          console.log(response);
 	          perspective.highest_vote = response.data.highest_vote;
 	        }, function (err) {
@@ -42044,8 +42044,8 @@
 	  data: function data() {
 	    return {
 	      term: '',
-	      url: 'http://localhost:3000/api/v1/perspectives',
-	      url_search: 'http://localhost:3000/api/v1/perspectives/special/search',
+	      url: 'http://np.cleverapps.io/api/v1/perspectives',
+	      url_search: 'http://np.cleverapps.io/api/v1/perspectives/special/search',
 	      chat: false,
 	      imgUrl: '',
 	      perspectiv: {
@@ -42065,7 +42065,7 @@
 	    this.user = _auth2.default.user.authenticated;
 	    var _this = this;
 	    if (this.user) {
-	      this.url = 'http://localhost:3000/api/v1/perspectives/special/al';
+	      this.url = 'http://np.cleverapps.io/api/v1/perspectives/special/al';
 	    }
 	    this.$root.$http.get(this.url).then(function (response) {
 	      console.log(response.data);
@@ -42087,7 +42087,7 @@
 	      this.perspectives = [];
 	      var _this = this;
 	      if (this.user) {
-	        this.url_search = 'http://localhost:3000/api/v1/perspectives/special/searc';
+	        this.url_search = 'http://np.cleverapps.io/api/v1/perspectives/special/searc';
 	      }
 	      if (this.term !== '') {
 	        this.$root.$http.post(this.url_search, { term: _this.term }).then(function (response) {
@@ -42105,7 +42105,7 @@
 	        perspective.user_voted = true;
 	        perspective.choice = choice;
 	        this.increment_vote(perspective, choice);
-	        this.$http.post('http://localhost:3000/api/v1/vote', this.perspectiv).then(function (response) {
+	        this.$http.post('http://np.cleverapps.io/api/v1/vote', this.perspectiv).then(function (response) {
 	          console.log(response);
 	          perspective.highest_vote = response.data.highest_vote;
 	        }, function (err) {
@@ -42378,8 +42378,8 @@
 	  data: function data() {
 	    return {
 	      term: '',
-	      url: 'http://localhost:3000/api/v1/perspectives/',
-	      url_search: 'http://localhost:3000/api/v1/perspectives/special/searc',
+	      url: 'http://np.cleverapps.io/api/v1/perspectives/',
+	      url_search: 'http://np.cleverapps.io/api/v1/perspectives/special/searc',
 	      chat: false,
 	      imgUrl: '',
 	      perspectiv: {
@@ -42435,7 +42435,7 @@
 	        perspective.user_voted = true;
 	        perspective.choice = choice;
 	        this.increment_vote(perspective, choice);
-	        this.$http.post('http://localhost:3000/api/v1/vote', this.perspectiv).then(function (response) {
+	        this.$http.post('http://np.cleverapps.io/api/v1/vote', this.perspectiv).then(function (response) {
 	          console.log(response);
 	          perspective.highest_vote = response.data.highest_vote;
 	        }, function (err) {
@@ -42792,7 +42792,7 @@
 
 	      this.errors = {};
 	      this.running = true;
-	      this.$http.post('http://localhost:3000/api/v1/store', this.perspective).then(function (response) {
+	      this.$http.post('http://np.cleverapps.io/api/v1/store', this.perspective).then(function (response) {
 	        console.log(response);
 	        _this2.errors = response.data;
 	        _this2.running = false;
