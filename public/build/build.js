@@ -40392,7 +40392,7 @@
 	  },
 
 	  // Send a request to the login URL and save the returned JWT
-	  login(context, creds) {
+	  login: function(context, creds) {
 	    context.$http.post(LOGIN_URL, creds)
 	    .then((response)=>{
 	      context.running = false
@@ -40415,7 +40415,7 @@
 	    })
 	  },
 
-	  signup(context, creds) {
+	  signup: function(context, creds) {
 	    context.$http.post(SIGNUP_URL, creds)
 	    .then((response)=>{
 	      context.running = false
