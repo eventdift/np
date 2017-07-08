@@ -48,10 +48,10 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('DB_HOST', '127.0.0.1'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'naijapolls')
+      host: process.env.MYSQL_ADDON_HOST,
+      user: process.env.MYSQL_ADDON_USER,
+      password: process.env.MYSQL_ADDON_PASSWORD,
+      database: process.env.MYSQL_ADDON_DB
     },
     debug: true
   },
