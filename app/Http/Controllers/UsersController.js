@@ -15,7 +15,7 @@ class UsersController {
 	      response.json(validation) 
 	      return 
 	    }
-	    const safePassword = yield Hash.make(request.input('password'))
+    const safePassword = yield Hash.make(request.input('password'))
 		const user = yield User.create({
 			nickname: request.input('nickname'),
   			email: request.input('email'),
@@ -26,13 +26,9 @@ class UsersController {
 	      message.from('naija@naijapolls.ng')
 	      message.subject('Welcome to naijapolls')
 	    })
-	    const email = request.input('email')
-	    const safePassword = yield Hash.make(request.input('password'))
-	    const token = yield request.auth.attempt(email, request.input('password')) 
-
-    	const user = yield User.query().where('email',email).fetch()
-	    response.json({'token':token,'login':user})
-	    return 
+    const email = request.input('email')
+    const token = yield request.auth.attempt(email, request.input('password')) 
+    return response.json({'token':token,'login':user})
 	}
 
 	*login(request,response){
