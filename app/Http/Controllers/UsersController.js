@@ -30,10 +30,9 @@ class UsersController {
 	    const safePassword = yield Hash.make(request.input('password'))
 	    const token = yield request.auth.attempt(email, request.input('password')) 
 
-	    if (token) {
-	    	const user = yield User.query().where('email',email).fetch()
-		    return response.json({'token':token,'login':user})
-	    }
+    	const user = yield User.query().where('email',email).fetch()
+	    response.json({'token':token,'login':user})
+	    return 
 	}
 
 	*login(request,response){
