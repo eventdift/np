@@ -40394,7 +40394,7 @@
 	  // Send a request to the login URL and save the returned JWT
 	  login: function(context, creds) {
 	    context.$http.post(LOGIN_URL, creds)
-	    .then((response)=>{
+	    .then(function(response){
 	      context.running = false
 	      if(!response.data.errors){
 	        var token = response.data.token
@@ -40408,7 +40408,7 @@
 	      }else{
 	        context.errors = response.data
 	      }
-	    },(err) => {
+	    },function(err){
 	      console.log(err)
 	      context.running = false
 	      context.errors = err.data
@@ -40417,7 +40417,7 @@
 
 	  signup: function(context, creds) {
 	    context.$http.post(SIGNUP_URL, creds)
-	    .then((response)=>{
+	    .then(function(response){
 	      context.running = false
 	     if(!response.data.errors){
 	        var token = response.data.token
@@ -40431,7 +40431,7 @@
 	      }else{
 	        context.errors = response.data
 	      }
-	    },(err) => {
+	    },function(err){
 	      context.running = false
 	      context.errors = err.data
 	    })
