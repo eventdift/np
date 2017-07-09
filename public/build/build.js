@@ -40438,12 +40438,12 @@
 	  },
 
 	  // To log out, we just need to remove the token
-	  logout(context) {
+	  logout:function(context) {
 	        localStorage.removeItem('id_token')
 	        this.user.authenticated = false
 	        context.$router.push({ path: 'login' })
 	  },
-	  checkAuth() {
+	  checkAuth:function() {
 	    var jwt = localStorage.getItem('id_token')
 	    if(jwt) {
 	      this.user.authenticated = true
@@ -40454,7 +40454,7 @@
 	  },
 
 	  // The object to be passed as a header for authenticated requests
-	  getAuthHeader() {
+	  getAuthHeader:function() {
 	    return {
 	      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
 	    }
