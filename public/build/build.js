@@ -40614,7 +40614,7 @@
 	//                       </center>
 	//                       <ul class="rate-ul">
 	//                         <li class="home">***
-	//                           <img class="" :src="`../assets/`+perspective.highest_vote+`.png`" alt="">
+	//                           <img class="" :src="../assets/"+perspective.highest_vote+".png" alt="">
 	//                           <span> {{perspective.highest_vote_count}} </span>
 	//                           ***
 	//                         </li>
@@ -40683,7 +40683,7 @@
 	//                       </center>
 	//                       <ul class="rate-ul">
 	//                         <li class="home">***
-	//                           <img class="" :src="`../assets/`+perspective.highest_vote+`.png`" alt="">
+	//                           <img class="" :src="../assets/"+perspective.highest_vote+".png" alt="">
 	//                           <span> {{perspective.highest_vote_count}} </span>
 	//                           ***
 	//                         </li>
@@ -40753,7 +40753,7 @@
 	//                       </center>
 	//                       <ul class="rate-ul">
 	//                         <li class="home">***
-	//                           <img class="" :src="`../assets/`+perspective.highest_vote+`.png`" alt="">
+	//                           <img class="" :src="../assets/"+perspective.highest_vote+".png" alt="">
 	//                           <span> {{perspective.highest_vote_count}} </span>
 	//                           ***
 	//                         </li>
