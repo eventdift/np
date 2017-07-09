@@ -26,8 +26,14 @@ class UsersController {
 	      message.from('naija@naijapolls.ng')
 	      message.subject('Welcome to naijapolls')
 	    })
-	    response.json(user) 
-	    return
+	    const email = request.input('email')
+	    const safePassword = yield Hash.make(request.input('password'))
+	    const token = yield request.auth.attempt(email, request.input('password')) 
+
+	    if (token) {
+	    	const user = yield User.query().where('email',email).fetch()
+		    return response.json({'token':token,'login':user})
+	    }
 	}
 
 	*login(request,response){
